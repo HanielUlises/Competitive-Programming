@@ -2,15 +2,17 @@
 
 // All the sub sets of a given set
 void printSubArrays(int array, int size){
+    int largestSum = 0;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             int subArrSum = 0;
             for(int k = i; k <= j, k++){
-                std::cout<< array[k]<<",";
+                subArrSum += array[k];
             }
-            std::cout<<std::endl;
+            largestSum = std::max(largestSum, subArrSum)M
         }
     }
+    return largestSum;
 }
 
 int main (){
