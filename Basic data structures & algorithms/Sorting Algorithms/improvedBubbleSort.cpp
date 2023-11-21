@@ -2,7 +2,7 @@
 
 std::vector<int> optimizedBubbleSort(std::vector<int> v){
     bool flag = false;
-    int size = v.size();
+    size_t size = v.size();
     for (int i = 0; i < size - 1 ; i++){
         for(int j = 0; j < size - 1 - i; j++){
             if (v[j] > v[j + 1]){

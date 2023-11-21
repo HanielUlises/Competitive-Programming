@@ -1,7 +1,8 @@
 #include "bits/stdc++.h"
 
 std::vector<int> insertionSort (std::vector<int> v){
-    
+    size_t size = v.size();
+    for (int i = 1;)
     return v;
 }
 
