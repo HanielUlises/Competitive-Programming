@@ -11,6 +11,7 @@
         "type_traits": "cpp",
         "xstddef": "cpp",
         "xtr1common": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xutility": "cpp"
     }
 }
