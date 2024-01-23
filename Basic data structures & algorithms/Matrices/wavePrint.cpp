@@ -1,7 +1,7 @@
 #include "bits/stdc++.h"
 
-vector<int> WavePrint(int m, int n, vector<vector<int>> arr) {
-    vector<int> result;
+std::vector<int> WavePrint(int m, int n, std::vector<std::vector<int>> arr) {
+    std::vector<int> result;
     for (int col = n - 1; col >= 0; col--) {
         if (col % 2 == 0) {
             for (int row = 0; row < m; row++) {
