@@ -7,9 +7,10 @@
 class Graph{
     private:
     // Adjacency list of matrix M
-        std::unordered_map<std::string, std::unordered_set<std::string>> adjList;
+        std::unordered_map<std::string, std::unordered_set<std::string>> adjacency_list;
     public:
         bool add_vertex(std::string vertex);
+        bool add_edge (std::string vertex_1, std::string vertex_2);
         void print_graph();
 };
 
@@ -27,15 +28,33 @@ class Graph{
 */
 
 bool Graph::add_vertex(std::string vertex){
-    if(adjList.count(vertex) == 0){
-        adjList[vertex];
+    if(adjacency_list.count(vertex) == 0){
+        adjacency_list[vertex];
+        return true;
+    }
+    return false;
+}
+
+/*
+    The edges, or graph connections are the paths from one node to another
+    so, suppose a node A is connected to both nodes B, and C, therefore, the adjacency list will be
+    {
+        "A" : [B, C]
+    }
+    And the edge is the connection between two given nodes
+*/
+
+bool Graph::add_edge(std::string vertex_1, std::string vertex_2){
+    if(adjacency_list.count(vertex_1) != 0 && adjacency_list.count(vertex_2)){
+        adjacency_list.at(vertex_1).insert(vertex_2);
+        adjacency_list.at(vertex_2).insert(vertex_1);
         return true;
     }
     return false;
 }
 
 void Graph::print_graph(){
-    for(auto[vertex, edges] : adjList){
+    for(auto[vertex, edges] : adjacency_list){
         std::cout << vertex << ": [";
         for(auto edge: edges){
             std::cout << edge << " ";
