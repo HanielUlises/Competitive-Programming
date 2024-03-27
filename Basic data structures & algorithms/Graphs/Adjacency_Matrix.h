@@ -19,7 +19,7 @@ class Graph{
     {
         "A" : []
     }
-    As this a new edge (or node), then there are now adjacent nodes to it
+    As this a new vertex (or node), then there are now adjacent nodes to it
     if A were connected with nodes B, C, then:
     {
         "A" : [B, C]
