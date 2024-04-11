@@ -12,6 +12,18 @@ bool is_sorted(int arr[], int n){
     return false;
 }
 
+bool is_sorted_v (int arr[], int i, int n){
+    if (i == n - 1){
+        return true;
+    }
+    if(arr[i] < arr[i+1] and is_sorted_v(arr, i + 1, n)){
+        return true;
+    }
+
+    return false;
+
+}
+
 int main (){
     int arr[]  = {1,2,3,4,5,6};
     int n = sizeof(arr)/sizeof(int);
