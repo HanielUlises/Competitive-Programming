@@ -28,9 +28,9 @@ int main() {
 
     for (const std::string &subset : subsets) {
         if (subset.empty()) {
-            std::cout << "{}\n";
+            std::cout << "{}";
         } else {
-            std::cout << subset << '\n';
+            std::cout << subset << ",";
         }
     }
 
