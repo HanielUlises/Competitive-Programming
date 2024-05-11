@@ -3,6 +3,7 @@
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
+#include <queue>
 
 class Graph{
     private:
@@ -12,6 +13,7 @@ class Graph{
         bool add_vertex(std::string vertex);
         bool add_edge (std::string vertex_1, std::string vertex_2);
         void print_graph();
+        void bfs(const std::string& source);
 };
 
 /*
@@ -51,6 +53,33 @@ bool Graph::add_edge(std::string vertex_1, std::string vertex_2){
         return true;
     }
     return false;
+}
+
+/*
+
+*/
+void Graph::bfs(const std::string& source) {
+    std::queue<std::string> q;
+    std::unordered_map<std::string, bool> visited;
+
+    // BFS starts from the source node
+    q.push(source);
+    visited[source] = true;
+
+    while (!q.empty()) {
+        std::string f = q.front();
+        q.pop();
+        std::cout << f << " ";
+
+        // Explore all neighbors of the current node
+        for (auto nbr : adjacency_list[f]) {
+            if (!visited[nbr]) {
+                q.push(nbr);
+                visited[nbr] = true;
+            }
+        }
+    }
+    std::cout << std::endl;
 }
 
 void Graph::print_graph(){
