@@ -5,6 +5,11 @@ typedef long long int ll;
 
 ll fibo_sum (ll n){
     std::vector<ll> f (n+1);
+    if(n== 0)
+    return 0;
+    if(n== 1)
+    return 1;
+
     ll sum = 2;
     f.at(0) = 1;
     f.at(1) = 1;
